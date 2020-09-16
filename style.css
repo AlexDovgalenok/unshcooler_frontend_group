@@ -1,0 +1,74 @@
+header {
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+ul {
+    margin: 0;
+    max-width: 1000px;
+}
+li.spisok {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1;
+    font-size: 20px;
+}
+p {
+    line-height: 0.5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.blank {
+    border: 2px solid black;
+    width: 300px;
+    height: 220px;
+    padding: 10px;
+    background-color: none;
+    margin: 0;
+}
+
+.underLin {
+    text-decoration: underline;
+}
+
+.section1 {
+    height: 10%;
+}
+
+.section2 {
+    height: 50%;
+}
+
+.section3 {
+    vertical-align: bottom;
+}
+
+.rightObj1 {
+    float: right;
+    vertical-align: top;
+    padding: 10px;
+    border: 0px;
+    border-radius: 20px;
+    background-color: yellowgreen;
+}
+
+.rightObj2 {
+    float: right;
+    vertical-align: bottom;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.low {
+    vertical-align: bottom;
+}
+
+.undertext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}

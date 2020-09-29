@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/test.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title>Test Work</title>
 </head>
@@ -20,41 +21,37 @@
         <div data-spec-display>Выбор</div>
       </nav>
     </header>
-    <main class="main">
-      <h1>Бесплатная переквалификация в IT-специальности</h1>
-      <p class="content-1">Много неразборчивого текста о возможностях выбора специальности и т.п. 
-      Можно добавить еще много всего что еще придет в голову для проверки работы выравнивания, когда текста много</p>
-      <form class="choise-form" data-spec-form>
-        <label data-spec><input type="radio" name="prof" hidden>1я профессия</label>
-        <label data-spec><input type="radio" name="prof" hidden>2я профессия</label>
-        <label data-spec><input type="radio" name="prof" hidden>3я профессия</label>
-        <label data-spec><input type="radio" name="prof" hidden>4я профессия</label>
-        <div class="main-btn-1">Начни с выбора напрпавления</div>
-      </form>      
-      <section class="inner-scheme">
-        <div>Направление</div>
-        <div>Курсы & книги</div>
-        <div>Проекты</div>
-        <div>работа</div>
-        <div class="main-btn-1">Начни сейчас</div>
-      </section>
-      <ul class="block">
-        <li>
-          <h3>Что-то там в первом блоке</h3>
-          <p>Много текста в первой карточке как минимум нужно написать для проверки выравнивания и все такое</p>
-          <div class="main-btn-2">Начни с выбора напрпавления</div>
-        </li>
-        <li>
-          <h3>Что-то там в первом блоке</h3>
-          <p>Много текста в первой карточке как минимум нужно написать для проверки выравнивания и все такое</p>
-          <div class="main-btn-2">Начни с выбора напрпавления</div>
-        </li>
-        <li>
-          <h3>Что-то там в первом блоке</h3>
-          <p>Много текста в первой карточке как минимум нужно написать для проверки выравнивания и все такое</p>
-          <div class="main-btn-2">Начни с выбора напрпавления</div>
-        </li>
-      </ul>
+    <main class="main-test">
+      <div class="discription">
+        <h1>Тестовое задание</h1>
+        <p>
+          Body text for explanations. this policy provides information about how and when we use cookies and their associated data. 
+          It applies to Services and Websites listed Privacy Policy, which also includes additional details about the collection additional
+          and use of information at Targetprocess. Please use our Cookie Settings panel (applicable to Targetprocess.com website) to
+          chenge your preffered cookie settings.
+        </p>
+        <h3>What is a cookie?</h3>
+        <p>
+          Cookies are small text files sent by websites to your computer or mobile device that enable services and websites features to 
+          function properly. Cookies are unique to your Targetprocess accaunt ant to your browser. Session-based cookies anly last while 
+          your browser is open, and are automatically deleted when you close the browser. Persistent cookies last until you or your 
+          browser delet them or until they expire.
+        </p>
+      </div>
+      <div class="sent-test">
+      <form>
+        <p>Краткий текст с описанием условий выполнения тестового задания.</p>
+        <label>Описание рашения:
+        <textarea type="text" class="input-test-text"></textarea>
+        <label name="file-btn">Прикрепить файл
+          <input type="file" name="file" hidden>
+        </label>
+        <ul class="file-list"></ul>
+        <label class="submit-btn">Отправить задание на проверку
+          <input type="submit" hidden>
+        </label>
+      </form>
+      </div>
     </main>
     <footer>
       <div>Невозможно разобрать</div>
@@ -62,5 +59,6 @@
       <div>Невозможно разобрать</div>
     </footer>
   </div>
-  <script src="../script.js"></script>
+  <script src="../scripts/script.js"></script>
+  <script src="../scripts/form.js"></script>
 </body>

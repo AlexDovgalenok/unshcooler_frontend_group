@@ -1,0 +1,40 @@
+.main-test {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: coral;
+}
+
+.discription {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-start;
+  padding-left: 5%;
+}
+
+.sent-test {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding-left: 5%;
+  background-color: aqua;
+}
+
+.input-test-text {
+  width: 90%;
+  height: 50%;
+  text-align: top;
+}
+
+.file-list {
+  list-style-type: none;
+}
+
+.submit-btn {
+  width: max-content;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 60px;
+}

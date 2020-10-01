@@ -84,15 +84,17 @@ li h2{
     width: 100px;
     margin: 40px 0px 0px 28px;
 }
-.btn{
+/* .btn{
     width: 50%;
     height: 70px;
     margin-left: 50px;
-    text-align: right;
-}
-.btn input{
+    text-align: center;
+} */
+.btn{
+    margin-left: 170px;
     width: 160px;
     height: 60px;
+    text-align: center;
     border: 3px solid black;
     border-radius: 60px;
     font-family: 'Anonymous Pro', monospace;
@@ -101,7 +103,7 @@ li h2{
     transition: 1s;
     background-color: white;
 }
-.btn input:hover{
+.btn:hover{
     transition: 1s;
     background-color: yellow;
     border: 3px solid blue;

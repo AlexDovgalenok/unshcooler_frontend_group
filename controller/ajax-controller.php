@@ -14,7 +14,7 @@ try {
         'data' => $_POST);
 } catch (Exception $e){
     $arr = array(
-        'error' => false,
+        'error' => true,
         'error-message' => $e);
 }
 

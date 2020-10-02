@@ -1,37 +1,75 @@
-const fileButton = document.getElementsByName('file-btn');
-const fileData = document.getElementsByName('file')[0];
-const list = document.getElementsByClassName('file-list')[0];
-const submitBtn = document.getElementsByClassName('submit-btn')[0];
-const formDiscrition = document.getElementsByClassName('input-test-text')[0];
-let fileList = []; i = 0;
-
-fileData.addEventListener("change", () => {
-  fileList[i] = fileData.files[0];
-  let li = document.createElement('li');
-  li.innerHTML = `${fileList[i].name}` + '<spun data-cansel> &#10006;</spun>';
-  li.setAttribute("value", i);
-  list.append(li);
-  i++;
-});
-
-list.addEventListener('click', (event) => {
-  if (event.target.dataset.cansel != undefined) {
-    fileList[event.target.parentElement.value] = undefined;
-    event.target.parentElement.remove();
+class Forma {
+  constructor(fArea, tArea, sBtn) {
+    this.formArea = fArea;
+    this.textArea = tArea;
+    this.submitBtn = sBtn;
+    this.fileList = [];
+    this.i = 0;
   }
-});
 
-submitBtn.addEventListener('click', async (event) => {
-  event.preventDefault();
-  let formData = new FormData();
-  formData.append("discrition", formDiscrition.value);
-  for (let j = 0; j <= i; j++) {
-    if (fileList[j] !== undefined) {
-      formData.append("file", fileList[j]);
+  unavailableForm () {
+    this.textArea.innerText = '';
+    this.textArea.setAttribute("disabled", "disabled");
+    this.submitBtn.remove();
+    fileBtn.parentElement.remove();
+    list.remove();
+    let div = document.createElement('div');
+    div.className = 'sended';
+    div.innerText = 'Задание отправлено ментору'
+    this.formArea.append(div);
+    let p = document.createElement('p');
+    p.innerHTML = 'После проверки задания, ментор пришлет вам приглашение в <a href="Projects.html">проекты</a>.';
+    this.formArea.append(p);
+  }
+
+  addFile (file) {
+    this.fileList[this.i] = file;
+    let li = document.createElement('li');
+    li.innerHTML = `${this.fileList[this.i].name}` + '<spun data-cansel> &#10006;</spun>';
+    li.setAttribute("value", this.i);
+    list.append(li);
+    this.i++;
+  }
+
+  removeFile (e) {
+    if (e.target.dataset.cansel != undefined) {
+      this.fileList[e.target.parentElement.value] = undefined;
+      e.target.parentElement.remove();
     }
   }
-  alert (`farmData:
-  discrition: ${formData.get('discrition')}
-  files: ${formData.get('file')}`);
-  formData.submit();
-});
+
+  submitF (e) {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("discription", this.textArea.value);
+    for (let j = 0; j <= this.i; j++) {
+      if (this.fileList[j] !== undefined) {
+        formData.append("file", this.fileList[j]);
+      }
+    }
+    localStorage.testSended = true;
+    this.i = 0;
+    this.unavailableForm();
+    //formData.submit();
+  }
+}
+
+//const fileButton = document.getElementsByName('file-btn');
+const fileBtn = document.getElementsByName('file')[0];
+const list = document.getElementsByClassName('file-list')[0];
+const submitBtn = document.getElementsByClassName('submit-btn')[0];
+const formText = document.getElementsByClassName('input-test-text')[0];
+const forma = new Forma(document.getElementsByName('form')[0], formText, submitBtn);
+localStorage.testSended = false;
+
+fileBtn.addEventListener('change', () => {
+  forma.addFile(fileBtn.files[0]);
+})
+
+list.addEventListener('click', (event) => {
+  forma.removeFile(event);
+})
+
+submitBtn.addEventListener('click', async (event) => {
+  forma.submitF(event);
+})

@@ -38,3 +38,11 @@
   border: 1px solid black;
   border-radius: 60px;
 }
+
+.sended {
+  width: max-content;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 60px;
+  color: gray;
+}

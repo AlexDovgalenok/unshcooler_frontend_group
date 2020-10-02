@@ -12,7 +12,9 @@ class Forma {
     this.textArea.setAttribute("disabled", "disabled");
     this.submitBtn.remove();
     fileBtn.parentElement.remove();
-    list.remove();
+    list.childNodes.forEach ((element) => {
+      element.children[0].remove();
+    })
     let div = document.createElement('div');
     div.className = 'sended';
     div.innerText = 'Задание отправлено ментору'

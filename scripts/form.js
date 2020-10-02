@@ -50,7 +50,16 @@ class Forma {
     localStorage.testSended = true;
     this.i = 0;
     this.unavailableForm();
-    //formData.submit();
+    this.send(formData);
+  }
+
+  async send (formData) {
+    let response = await fetch('../controller/ajax-controller.php', {
+      method: 'POST',
+      body: formData
+    });
+    let result = await response.json();
+    alert(result.message);
   }
 }
 
@@ -70,6 +79,6 @@ list.addEventListener('click', (event) => {
   forma.removeFile(event);
 })
 
-submitBtn.addEventListener('click', async (event) => {
+submitBtn.addEventListener('click', (event) => {
   forma.submitF(event);
 })

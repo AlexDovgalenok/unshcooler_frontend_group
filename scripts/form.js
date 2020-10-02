@@ -63,13 +63,12 @@ class Forma {
   }
 }
 
-//const fileButton = document.getElementsByName('file-btn');
 const fileBtn = document.getElementsByName('file')[0];
 const list = document.getElementsByClassName('file-list')[0];
 const submitBtn = document.getElementsByClassName('submit-btn')[0];
 const formText = document.getElementsByClassName('input-test-text')[0];
 const forma = new Forma(document.getElementsByName('form')[0], formText, submitBtn);
-localStorage.testSended = false;
+
 
 fileBtn.addEventListener('change', () => {
   forma.addFile(fileBtn.files[0]);
@@ -82,3 +81,10 @@ list.addEventListener('click', (event) => {
 submitBtn.addEventListener('click', (event) => {
   forma.submitF(event);
 })
+
+if (localStorage.testSended) forma.unavailableForm;
+
+const choiseDisplay = document.querySelector('[data-spec-display]');
+if (localStorage.spec != undefined) {
+  choiseDisplay.innerText = localStorage.spec;
+}
